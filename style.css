@@ -94,6 +94,7 @@ form {
     align-items: center;
     color:#35374B;
     font-size: large;
+    flex-direction: column;
 }
 
 form > button {
