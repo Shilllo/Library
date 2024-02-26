@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: #35374B;
+    border: 3px #B5C0D0 solid;
+    height: 60px;
+    color: #B5C0D0
+}
+
+.header > button {
+    color: #B5C0D0;
+    font-size: larger;
+    background-color: #35374B;
+    border: 3px #35374B solid;
+}
+
+.header > button:hover {
+    background-color: #B5C0D0;
+    color:#35374B;
+    border-radius: 15px;
+    border: 3px #35374B solid;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    gap: 15px
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px
+}
+
+.addBook {
+    border: 3px #B5C0D0 solid;
+    border-radius: 15px;
+    background-color: #35374B;
+    color: #B5C0D0;
+    height: 35px
+}
+
+.addBook:hover {
+    background-color: #B5C0D0;
+    color: #35374B;
+    border: 3px #35374B solid;
+}
+
+.card {
+    height: fit-content;
+    width: 1/5fr;
+    border: 5px #B5C0D0 solid;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#35374B;
+    gap: 10px
+}
+
+.readStatus, .removeCard {
+    border: 3px #B5C0D0 solid;
+    border-radius: 15px;
+    background-color: #35374B;
+    color: #B5C0D0;
+    padding: 10px
+}
+
+.readStatus:hover, .removeCard:hover {
+    background-color: #B5C0D0;
+    color: #35374B;
+    border: 3px #35374B solid;   
+}
+
+form {
+    border: 5px #B5C0D0 solid;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color:#35374B;
+    font-size: large;
+}
+
+form > button {
+    border-radius: 10px;
+    border: 3px #35374B solid;
+    background-color:#35374B;
+    color: aliceblue;
+    font-size: medium;
+    width: 100px
+}
+
+form > button:hover {
+    background-color: #B5C0D0;
+    color: #35374B;
+    border: 3px #35374B solid; 
+}
+
+.closeBtn {
+    background-color: brown;
+}
+
+.yesBtn {
+    background-color: darkgreen;
+}
+
+.noBtn {
+    background-color: orange;
+}
