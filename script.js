@@ -7,13 +7,22 @@ const myLibrary = [
     },
 ];
 
-function Book(title, author, numPage, readStatus) { 
-    this.title = title
-    this.author = author
-    this.numPage = numPage
-    this.readStatus = readStatus
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.numPage} pages, ${this.readStatus}`
+// function Book(title, author, numPage, readStatus) { 
+//     this.title = title
+//     this.author = author
+//     this.numPage = numPage
+//     this.readStatus = readStatus
+//     this.info = function() {
+//         return `${this.title} by ${this.author}, ${this.numPage} pages, ${this.readStatus}`
+//     }
+// }
+
+class Book {
+    constructor(title, author, numPage, readStatus) {
+        this.title = title
+        this.author = author
+        this.numPage = numPage
+        this.readStatus = readStatus
     }
 }
 
