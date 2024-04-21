@@ -55,7 +55,7 @@ body {
 .addBook:hover {
     background-color: #B5C0D0;
     color: #35374B;
-    border: 3px #35374B solid;
+    border: 3px #35374B solid
 }
 
 .card {
