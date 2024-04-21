@@ -7,16 +7,6 @@ const myLibrary = [
     },
 ];
 
-// function Book(title, author, numPage, readStatus) { 
-//     this.title = title
-//     this.author = author
-//     this.numPage = numPage
-//     this.readStatus = readStatus
-//     this.info = function() {
-//         return `${this.title} by ${this.author}, ${this.numPage} pages, ${this.readStatus}`
-//     }
-// }
-
 class Book {
     constructor(title, author, numPage, readStatus) {
         this.title = title
@@ -27,72 +17,83 @@ class Book {
 }
 
 function addBookToLibrary() {
-    let form = document.createElement('FORM')
-    form.method = 'GET'
-    form.setAttribute('id', 'formm')
+    // let form = document.createElement('FORM')
+    // form.method = 'GET'
+    // form.setAttribute('id', 'formm')
     
-    let books = document.querySelector('.books')
+    // let books = document.querySelector('.books')
 
-    let authorLabel = document.createElement('LABEL')
-    authorLabel.setAttribute('for', 'Author')
-    authorLabel.textContent = 'Author'
-    let authorInput = document.createElement('INPUT')
-    authorInput.setAttribute('type', 'text')
-    authorInput.setAttribute('id', 'Author')
-    authorInput.setAttribute('placeholder', 'Войнич')
+    // let authorLabel = document.createElement('LABEL')
+    // authorLabel.setAttribute('for', 'Author')
+    // authorLabel.textContent = 'Author'
+    // let authorInput = document.createElement('INPUT')
+    // authorInput.setAttribute('type', 'text')
+    // authorInput.setAttribute('id', 'Author')
+    // authorInput.setAttribute('placeholder', 'Войнич')
+    // authorInput.required = true
 
-    let titleLabel = document.createElement('LABEL')
-    titleLabel.setAttribute('for', 'Title')
-    titleLabel.textContent = 'Title'
-    let titleInput = document.createElement('INPUT')
-    titleInput.setAttribute('type', 'text')
-    titleInput.setAttribute('id', 'Title')
-    titleInput.setAttribute('placeholder', 'Овод')
+    // const spanAuthor = document.createElement('span')
+    // spanAuthor.setAttribute('class', 'error')
+    // spanAuthor.setAttribute('aria-live', 'polite')
 
-    let numPageLabel = document.createElement('LABEL')
-    numPageLabel.setAttribute('for', 'numPage')
-    numPageLabel.textContent = 'How many pages?'
-    let numPageInput = document.createElement('INPUT')
-    numPageInput.setAttribute('type', 'number')
-    numPageInput.setAttribute('id', 'numPage')
-    numPageInput.setAttribute('placeholder', '...')
 
-    let p = document.createElement('p')
-    p.textContent = 'Have you already read this book?'
+    // let titleLabel = document.createElement('LABEL')
+    // titleLabel.setAttribute('for', 'Title')
+    // titleLabel.textContent = 'Title'
+    // let titleInput = document.createElement('INPUT')
+    // titleInput.setAttribute('type', 'text')
+    // titleInput.setAttribute('id', 'Title')
+    // titleInput.setAttribute('placeholder', 'Овод')
+    // titleInput.required = true
 
-    let readStatusYES = document.createElement('button')
-    readStatusYES.setAttribute('class', 'YES')
-    readStatusYES.setAttribute('type', 'button')
-    readStatusYES.setAttribute('class', 'yesBtn')
-    readStatusYES.textContent = "Yes"
+    // let numPageLabel = document.createElement('LABEL')
+    // numPageLabel.setAttribute('for', 'numPage')
+    // numPageLabel.textContent = 'How many pages?'
+    // let numPageInput = document.createElement('INPUT')
+    // numPageInput.setAttribute('type', 'number')
+    // numPageInput.setAttribute('id', 'numPage')
+    // numPageInput.setAttribute('placeholder', '...')
+    // numPageInput.setAttribute('min', 1)
+    // numPageInput.required = true
+    
 
-    let readStatusNO = document.createElement('button')
-    readStatusNO.setAttribute('class', 'NO')
-    readStatusNO.setAttribute('type', 'button')
-    readStatusNO.setAttribute('class', 'noBtn')
-    readStatusNO.textContent = "No"
+    // let p = document.createElement('p')
+    // p.textContent = 'Have you already read this book?'
 
-    let deleteBtn = document.createElement('button')
-    deleteBtn.textContent = 'Close'
-    deleteBtn.setAttribute('type', 'button')
-    deleteBtn.setAttribute('class', 'closeBtn')
+    // let readStatusYES = document.createElement('button')
+    // readStatusYES.setAttribute('class', 'YES')
+    // readStatusYES.setAttribute('type', 'button')
+    // readStatusYES.setAttribute('class', 'yesBtn')
+    // readStatusYES.textContent = "Yes"
 
-    form.appendChild(authorLabel)
-    form.appendChild(authorInput)
+    // let readStatusNO = document.createElement('button')
+    // readStatusNO.setAttribute('class', 'NO')
+    // readStatusNO.setAttribute('type', 'button')
+    // readStatusNO.setAttribute('class', 'noBtn')
+    // readStatusNO.textContent = "No"
 
-    form.appendChild(titleLabel)
-    form.appendChild(titleInput)
+    // let deleteBtn = document.createElement('button')
+    // deleteBtn.textContent = 'Close'
+    // deleteBtn.setAttribute('type', 'button')
+    // deleteBtn.setAttribute('class', 'closeBtn')
 
-    form.appendChild(numPageLabel)
-    form.appendChild(numPageInput)
+    // form.appendChild(authorLabel)
+    // form.appendChild(authorInput)
 
-    form.appendChild(p)
-    form.appendChild(readStatusYES)
-    form.appendChild(readStatusNO)
-    form.appendChild(deleteBtn)
+    // form.appendChild(spanAuthor)
 
-    return document.querySelector('.main-content').insertBefore(form, document.querySelector('.books'))
+    // form.appendChild(titleLabel)
+    // form.appendChild(titleInput)
 
+    // form.appendChild(numPageLabel)
+    // form.appendChild(numPageInput)
+
+    // form.appendChild(p)
+    // form.appendChild(readStatusYES)
+    // form.appendChild(readStatusNO)
+    // form.appendChild(deleteBtn)
+
+    // return document.querySelector('.main-content').insertBefore(form, document.querySelector('.books'))
   }
 
 function displayAllBooks(array) {
@@ -134,58 +135,89 @@ function displayAllBooks(array) {
     }
 }
 
+function cleanForm() {
+    document.getElementById("formm").reset()
+}
+
 displayAllBooks(myLibrary)
 
 let addBook = document.querySelector('.addBook')
 
 addBook.addEventListener('click', function() {
-    if (!document.querySelector('form')) {
-        addBookToLibrary()
-        let closeBtn = document.querySelector('.closeBtn')
-        closeBtn.addEventListener('click', closeForm)
+    document.querySelector('#formm').classList.toggle('hidden')
+    document.querySelector('svg').classList.toggle('rotated')
         
-        let yesBtn = document.querySelector('.yesBtn')
+    const author = document.querySelector('#Author')
+    const title = document.querySelector('#Title')
+    const numPage = document.querySelector('#numPage')
 
-        yesBtn.addEventListener('click', function() {
-            if (document.querySelector('#Author').value && document.querySelector('#Title').value && document.querySelector('#numPage').value) {
-                myLibrary.push({
-                    author: document.querySelector('#Author').value,
-                    title: document.querySelector('#Title').value,
-                    numPage: document.querySelector('#numPage').value,
-                    readStatus: 'Read'
-                })
-                closeForm()
-                displayAllBooks(myLibrary)
-                refreshBtns()
-            }
-        })
+    let yesBtn = document.querySelector('.yesBtn')
 
-        let noBtn = document.querySelector('.noBtn')
+    yesBtn.addEventListener('click', function() {
+        if (author.validity.valid && title.validity.valid && numPage.validity.valid) {
+            myLibrary.push({
+                author: document.querySelector('#Author').value,
+                title: document.querySelector('#Title').value,
+                numPage: document.querySelector('#numPage').value,
+                readStatus: 'Read'
+            })
+            document.querySelector('#formm').classList.toggle('hidden')
+            document.querySelector('svg').classList.toggle('rotated')
 
-        noBtn.addEventListener('click', function() {
-            if (document.querySelector('#Author').value && document.querySelector('#Title').value && document.querySelector('#numPage').value) {
-                myLibrary.push({
-                    author: document.querySelector('#Author').value,
-                    title: document.querySelector('#Title').value,
-                    numPage: document.querySelector('#numPage').value,
-                    readStatus: 'Not read'
-                })
-                closeForm()
-                displayAllBooks(myLibrary)
-                refreshBtns()
-            }
-        })
+            displayAllBooks(myLibrary)
+            refreshBtns()
+            cleanForm()
+        } 
+    })
+    let noBtn = document.querySelector('.noBtn')
 
-    }
+    noBtn.addEventListener('click', function() {
+        if (author.validity.valid && title.validity.valid && numPage.validity.valid) {
+            myLibrary.push({
+                author: document.querySelector('#Author').value,
+                title: document.querySelector('#Title').value,
+                numPage: document.querySelector('#numPage').value,
+                readStatus: 'Not read'
+            })
+            document.querySelector('#formm').classList.toggle('hidden')
+            document.querySelector('svg').classList.toggle('rotated')
+
+            displayAllBooks(myLibrary)
+            refreshBtns()
+            cleanForm()
+        }
+    })
+
+    author.addEventListener('input', (event) => {
+        if (!author.validity.valid) {
+            document.querySelector('.author').children[1].classList.add('invalid')
+            document.querySelector('.author').children[1].textContent = 'You need to enter Author'
+        } else {
+            document.querySelector('.author').children[1].classList.remove('invalid')
+            document.querySelector('.author').children[1].textContent = ""
+        }
+    })
+
+    title.addEventListener('input', (event) => {
+        if (!title.validity.valid) {
+            document.querySelector('.title').children[1].classList.add('invalid')
+            document.querySelector('.title').children[1].textContent = 'You need to enter Title'
+        } else {
+            document.querySelector('.title').children[1].classList.remove('invalid')
+            document.querySelector('.title').children[1].textContent = ""
+        }
+    })
+
+    numPage.addEventListener('input', (event) => {
+        if (!numPage.validity.valid) {
+            document.querySelector('.numpage').children[1].classList.add('invalid')
+            document.querySelector('.numpage').children[1].textContent = 'You need to enter Title'
+        } else {
+            document.querySelector('.numpage').children[1].classList.remove('invalid')
+            document.querySelector('.numpage').children[1].textContent = ""
+        }
+    })
 })
-
-function closeForm() {
-    if (document.querySelector('form')) {
-        let form = document.querySelector('form')
-        let parent = document.querySelector('.main-content')
-        return parent.removeChild(form)
-    }
-}
 
 function refreshBtns() {
     for (i = 0; i < myLibrary.length; i++) {
