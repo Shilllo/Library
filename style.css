@@ -123,3 +123,42 @@ form > button:hover {
 .noBtn {
     background-color: orange;
 }
+
+input:invalid {
+    border: 2px solid red
+}
+
+input:valid {
+    border: 2px solid green
+}
+
+.hidden {
+    display: none
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    color: aliceblue;
+    transition: transform 300ms ease-in-out;
+}
+
+svg.rotated {
+    transform: rotate(45deg);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error.invalid {
+    width: 100%;
+    padding: 5px;
+    font-size: 60%;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    background-color: red;
+}
