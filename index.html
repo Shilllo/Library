@@ -13,9 +13,34 @@
         <button>Settings</button>
     </div>    
     <div class="main-content">
-        <button class="addBook">+</button>
-        <div class="books"></div>
-        
+        <button class="addBook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+        </button>
+        <form method="GET" id="formm" class="hidden">
+
+            <label for="Author" class="author">
+                <input type="text" id="Author" placeholder="Войнич" required>
+                <span class="error" aria-live="polite"></span>
+            </label>
+            
+
+            <label for="Title" class="title">
+                <input type="text" id="Title" placeholder="Овод" required>
+                <span class="error" aria-live="polite"></span>
+            </label>
+
+            <label for="numPage" class="numpage">
+                <input type="number" id="numPage" placeholder="..." min="1" required>
+                <span class="error" aria-live="polite"></span>
+            </label>
+            
+
+            <p>Have you already read this book?</p>
+
+            <button class="yesBtn" type="button">Yes</button>
+            <button class="noBtn" type="button">No</button>
+        </form>
+        <div class="books"></div>       
     </div>
     <script src="script.js"></script>
 </body>
